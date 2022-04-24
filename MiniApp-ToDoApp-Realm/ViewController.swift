@@ -81,6 +81,17 @@ class ViewController: UIViewController{
         }
         print("todoItemのカウント",todoItem.count)
         tableView.reloadData()
+    }
+    @IBAction func filterButton(_ sender: Any) {
+        let realm = try! Realm()
+        guard let selectedDate = calendar.selectedDate else{
+            return
+        }
+        let filters = try! realm.objects(ToDo.self).filter("date==%@",selectedDate)
+        for filter in filters{
+            print("\(filter.title),\(filter.date!)")
+            print("--------")
+        }
 
     }
 }
@@ -93,10 +104,8 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TodoTableViewCell
         let object = todoItem[indexPath.row]
         cell.textLabel?.text = object.title
-        guard let selectedDate = calendar.selectedDate else{
-            return cell
-        }
-        cell.dateLabel.text = DateUtils.stringFromDate(date: selectedDate, format: "yyyy年MM月dd日")
+
+        cell.dateLabel.text = DateUtils.stringFromDate(date: object.date!, format: "yyyy年MM月dd日")
         return cell
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
