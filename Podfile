@@ -7,5 +7,7 @@ target 'MiniApp-ToDoApp-Realm' do
 
   # Pods for MiniApp-ToDoApp-Realm
   pod 'RealmSwift'
+  pod 'FSCalendar'
+
 
 end

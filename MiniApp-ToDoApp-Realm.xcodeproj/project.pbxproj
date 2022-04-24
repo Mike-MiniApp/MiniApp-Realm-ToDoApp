@@ -13,6 +13,8 @@
 		957327CB281519AF00256E17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957327C9281519AF00256E17 /* Main.storyboard */; };
 		957327CD281519B100256E17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 957327CC281519B100256E17 /* Assets.xcassets */; };
 		957327D0281519B100256E17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957327CE281519B100256E17 /* LaunchScreen.storyboard */; };
+		95A49904281537E600B84AC9 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A49902281537E600B84AC9 /* TodoTableViewCell.swift */; };
+		95A49905281537E600B84AC9 /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A49903281537E600B84AC9 /* TodoTableViewCell.xib */; };
 		EE7135DF9B1233297541F1A3 /* Pods_MiniApp_ToDoApp_Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5D11B0F66AF6DE300AD1EB /* Pods_MiniApp_ToDoApp_Realm.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		957327CC281519B100256E17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		957327CF281519B100256E17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		957327D1281519B100256E17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95A49902281537E600B84AC9 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		95A49903281537E600B84AC9 /* TodoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableViewCell.xib; sourceTree = "<group>"; };
 		FB5D11B0F66AF6DE300AD1EB /* Pods_MiniApp_ToDoApp_Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniApp_ToDoApp_Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -48,7 +52,6 @@
 				02CA9B40E2564F441AB565EB /* Pods-MiniApp-ToDoApp-Realm.debug.xcconfig */,
 				239863FC7DD811963D2FF882 /* Pods-MiniApp-ToDoApp-Realm.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,6 +91,8 @@
 				957327CC281519B100256E17 /* Assets.xcassets */,
 				957327CE281519B100256E17 /* LaunchScreen.storyboard */,
 				957327D1281519B100256E17 /* Info.plist */,
+				95A49902281537E600B84AC9 /* TodoTableViewCell.swift */,
+				95A49903281537E600B84AC9 /* TodoTableViewCell.xib */,
 			);
 			path = "MiniApp-ToDoApp-Realm";
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				957327D0281519B100256E17 /* LaunchScreen.storyboard in Resources */,
 				957327CD281519B100256E17 /* Assets.xcassets in Resources */,
 				957327CB281519AF00256E17 /* Main.storyboard in Resources */,
+				95A49905281537E600B84AC9 /* TodoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +216,7 @@
 				957327C8281519AF00256E17 /* ViewController.swift in Sources */,
 				957327C4281519AF00256E17 /* AppDelegate.swift in Sources */,
 				957327C6281519AF00256E17 /* SceneDelegate.swift in Sources */,
+				95A49904281537E600B84AC9 /* TodoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
