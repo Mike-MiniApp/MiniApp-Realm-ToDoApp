@@ -49,6 +49,15 @@ class ViewController: UIViewController{
         setCalendar()
     }
     override func viewWillAppear(_ animated: Bool) {
+        // ここの日付の指定はInt型
+        let calPosition = Calendar.current
+        // 現在の年・月・日・時刻を取得
+        let comp = calPosition.dateComponents(
+            [Calendar.Component.year, Calendar.Component.month, Calendar.Component.day,
+             Calendar.Component.hour, Calendar.Component.minute, Calendar.Component.second],
+             from: Date())
+        let selectDay = calPosition.date(from: DateComponents(year: comp.year, month: comp.month, day: comp.day))
+        calendar.select(selectDay)
         tableView.reloadData()
     }
     private func setTableView(){
@@ -60,13 +69,6 @@ class ViewController: UIViewController{
         calendar.delegate = self
         calendar.scope = .week
         calendar.locale = Locale(identifier: "ja")
-//        // 現在の国を取得（場所によって現在時刻が変わるため）
-//        let calPosition = Calendar.current
-//        // 現在の年・月・日・時刻を取得
-//        let comp = calPosition.dateComponents(
-//            [Calendar.Component.year, Calendar.Component.month, Calendar.Component.day,
-//             Calendar.Component.hour, Calendar.Component.minute, Calendar.Component.second],
-//             from: Date())
     }
 
 
@@ -104,7 +106,9 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TodoTableViewCell
         let object = todoItem[indexPath.row]
         cell.textLabel?.text = object.title
-
+        guard let date = object.date else{
+            return cell
+        }
         cell.dateLabel.text = DateUtils.stringFromDate(date: object.date!, format: "yyyy年MM月dd日")
         return cell
     }
